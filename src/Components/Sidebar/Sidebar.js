@@ -93,7 +93,7 @@ class Sidebar extends Component {
 
                     <div className="sidebar">
                         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
-                            <div className="image">
+                            <div className="image" style={{ marginRight: '10px' }}>
                                 <img src="./assets/dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
                             </div>
                             <div className="info">
@@ -114,7 +114,7 @@ class Sidebar extends Component {
 
                         <nav className="mt-2">
                             <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <li className={`nav-item ${isOpenDashboard ? 'menu-open' : ''}`}>
+                                <li className={`nav-item ${isOpenDashboard ? 'menu-open' : ''}`}>
                                     <Link to="#" className="nav-link" onClick={this.toggleOpenDashboard}>
                                         <i className="fas fa-tachometer-alt nav-icon"></i>
                                         <p>
@@ -134,12 +134,6 @@ class Sidebar extends Component {
                                                 <Link to="/dashboard2" className="nav-link">
                                                     <i className="far fa-circle nav-icon"></i>
                                                     <p>Dashboard v2</p>
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item" key="recoverpassword">
-                                                <Link to="/recoverpassword" className="nav-link">
-                                                    <i className="far fa-circle nav-icon"></i>
-                                                    <p>Dashboard v3</p>
                                                 </Link>
                                             </li>
                                         </ul>
@@ -170,18 +164,6 @@ class Sidebar extends Component {
                                                     <p>ChartJS</p>
                                                 </Link>
                                             </li>
-                                            <li className="nav-item" key="login">
-                                                <Link to="/login" className="nav-link">
-                                                    <i className="far fa-circle nav-icon"></i>
-                                                    <p>Flot</p>
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item" key="recoverpassword">
-                                                <Link to="/recoverpassword" className="nav-link">
-                                                    <i className="far fa-circle nav-icon"></i>
-                                                    <p>uPlot</p>
-                                                </Link>
-                                            </li>
                                         </ul>
                                     )}
                                 </li>
@@ -199,18 +181,6 @@ class Sidebar extends Component {
                                                 <Link to="/general" className="nav-link">
                                                     <i className="far fa-circle nav-icon"></i>
                                                     <p>General Elements</p>
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item" key="login">
-                                                <Link to="/login" className="nav-link">
-                                                    <i className="far fa-circle nav-icon"></i>
-                                                    <p>Advanced Elements</p>
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item" key="recoverpassword">
-                                                <Link to="/recoverpassword" className="nav-link">
-                                                    <i className="far fa-circle nav-icon"></i>
-                                                    <p>Editors</p>
                                                 </Link>
                                             </li>
                                         </ul>
@@ -241,252 +211,42 @@ class Sidebar extends Component {
                                         </ul>
                                     )}
                                 </li>
-                                <li className="nav-header">EXAMPLES</li>
-                                <li className="nav-item">
-                                    <a href="pages/calendar.html" className="nav-link">
-                                        <i className="nav-icon far fa-calendar-alt"></i>
+                                <li className={`nav-item ${isOpenLogin ? 'menu-open' : ''}`}>
+                                    <Link to="#" className="nav-link" onClick={this.toggleOpenLogin}>
+                                        <i className="fas fa-user nav-icon"></i>
                                         <p>
-                                            Calendar
-                                            <span className="badge badge-info right">2</span>
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="pages/gallery.html" className="nav-link">
-                                        <i className="nav-icon far fa-image"></i>
-                                        <p>
-                                            Gallery
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="pages/kanban.html" className="nav-link">
-                                        <i className="nav-icon fas fa-columns"></i>
-                                        <p>
-                                            Kanban Board
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className={`nav-item ${isOpenMailbox ? 'menu-open' : ''}`}>
-                                    <a href="#" className="nav-link" onClick={this.toggleOpenMailbox}>
-                                        <i className="nav-icon far fa-envelope"></i>
-                                        <p>
-                                            Mailbox
-                                            <i className="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    {isOpenMailbox && (
-                                        <ul className="nav nav-treeview">
-                                            {['Inbox', 'Compose', 'Read',].map((option) => (
-
-                                                <li className="nav-item" key={option}>
-                                                    <a href={`pages/mailbox/${option.toLowerCase().replace(/ /g, '-')}.html`} className="nav-link">
-                                                        <i className="far fa-circle nav-icon"></i>
-                                                        <p>{option}</p>
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                                <li className={`nav-item ${isOpenPages ? 'menu-open' : ''}`}>
-                                    <a href="#" className="nav-link" onClick={this.toggleOpenPages}>
-                                        <i className="nav-icon fas fa-book"></i>
-                                        <p>
-                                            Pages
-                                            <i className="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    {isOpenPages && (
-                                        <ul className="nav nav-treeview">
-                                            {['Invoice', 'Profile', 'E-commerce', 'Projects', 'Project Add', 'Project Edit', 'Project Detail', 'Contacts', 'FAQ', 'Contact us',].map((option) => (
-                                                <li className="nav-item" key={option}>
-                                                    <a href={`pages/examples/${option.toLowerCase().replace(/ /g, '-')}.html`} className="nav-link">
-                                                        <i className="far fa-circle nav-icon"></i>
-                                                        <p>{option}</p>
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                                <li className={`nav-item ${isOpenExtras ? 'menu-open' : ''}`}>
-                                    <Link to="#" className="nav-link" onClick={this.toggleOpenExtras}>
-                                        <i className="nav-icon far fa-plus-square"></i>
-                                        <p>
-                                            Extras
+                                            Login & Register
                                             <i className="fas fa-angle-left right"></i>
                                         </p>
                                     </Link>
-                                    {isOpenExtras && (
+                                    {isOpenLogin && (
                                         <ul className="nav nav-treeview">
-                                            <li className={`nav-item ${isOpenLogin ? 'menu-open' : ''}`}>
-                                                <Link to="#" className="nav-link" onClick={this.toggleOpenLogin}>
+                                            <li className="nav-item" key="register">
+                                                <Link to="/register" className="nav-link">
                                                     <i className="far fa-circle nav-icon"></i>
-                                                    <p>
-                                                        Login & Register
-                                                        <i className="fas fa-angle-left right"></i>
-                                                    </p>
+                                                    <p>Register</p>
                                                 </Link>
-                                                {isOpenLogin && (
-                                                    <ul className="nav nav-treeview">
-                                                        <li className="nav-item" key="register">
-                                                            <Link to="/register" className="nav-link">
-                                                                <i className="far fa-circle nav-icon"></i>
-                                                                <p>Register</p>
-                                                            </Link>
-                                                        </li>
-                                                        <li className="nav-item" key="login">
-                                                            <Link to="/login" className="nav-link">
-                                                                <i className="far fa-circle nav-icon"></i>
-                                                                <p>Login</p>
-                                                            </Link>
-                                                        </li>
-                                                        <li className="nav-item" key="forgetpassword">
-                                                            <Link to="/forgetpassword" className="nav-link">
-                                                                <i className="far fa-circle nav-icon"></i>
-                                                                <p>Forget Password</p>
-                                                            </Link>
-                                                        </li>
-                                                        <li className="nav-item" key="recoverpassword">
-                                                            <Link to="/recoverpassword" className="nav-link">
-                                                                <i className="far fa-circle nav-icon"></i>
-                                                                <p>Recover Password</p>
-                                                            </Link>
-                                                        </li>
-                                                    </ul>
-                                                )}
                                             </li>
-                                            {['Lockscreen', 'Legacy User Menu', 'Language Menu', 'Error 404', 'Error 500', 'Pace', 'Blank Page', 'Starter Page',].map((option) => (
-                                                <li className="nav-item" key={option}>
-                                                    <a href={`pages/examples/${option.toLowerCase().replace(/ /g, '-')}.html`} className="nav-link">
-                                                        <i className="far fa-circle nav-icon"></i>
-                                                        <p>{option}</p>
-                                                    </a>
-                                                </li>
-                                            ))}
+                                            <li className="nav-item" key="login">
+                                                <Link to="/login" className="nav-link">
+                                                    <i className="far fa-circle nav-icon"></i>
+                                                    <p>Login</p>
+                                                </Link>
+                                            </li>
+                                            <li className="nav-item" key="forgetpassword">
+                                                <Link to="/forgetpassword" className="nav-link">
+                                                    <i className="far fa-circle nav-icon"></i>
+                                                    <p>Forget Password</p>
+                                                </Link>
+                                            </li>
+                                            <li className="nav-item" key="recoverpassword">
+                                                <Link to="/recoverpassword" className="nav-link">
+                                                    <i className="far fa-circle nav-icon"></i>
+                                                    <p>Recover Password</p>
+                                                </Link>
+                                            </li>
                                         </ul>
                                     )}
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="nav-icon fas fa-search"></i>
-                                        <p>
-                                            Search
-                                            <i className="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul className="nav nav-treeview">
-                                        <li className="nav-item">
-                                            <a href="pages/search/simple.html" className="nav-link">
-                                                <i className="far fa-circle nav-icon"></i>
-                                                <p>Simple Search</p>
-                                            </a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a href="pages/search/enhanced.html" className="nav-link">
-                                                <i className="far fa-circle nav-icon"></i>
-                                                <p>Enhanced</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="nav-header">MISCELLANEOUS</li>
-                                <li className="nav-item">
-                                    <a href="iframe.html" className="nav-link">
-                                        <i className="nav-icon fas fa-ellipsis-h"></i>
-                                        <p>Tabbed IFrame Plugin</p>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="https://adminlte.io/docs/3.1/" className="nav-link">
-                                        <i className="nav-icon fas fa-file"></i>
-                                        <p>Documentation</p>
-                                    </a>
-                                </li>
-                                <li className="nav-header">MULTI LEVEL EXAMPLE</li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="fas fa-circle nav-icon"></i>
-                                        <p>Level 1</p>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="nav-icon fas fa-circle"></i>
-                                        <p>
-                                            Level 1
-                                            <i className="right fas fa-angle-left"></i>
-                                        </p>
-                                    </a>
-                                    <ul className="nav nav-treeview">
-                                        <li className="nav-item">
-                                            <a href="#" className="nav-link">
-                                                <i className="far fa-circle nav-icon"></i>
-                                                <p>Level 2</p>
-                                            </a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a href="#" className="nav-link">
-                                                <i className="far fa-circle nav-icon"></i>
-                                                <p>
-                                                    Level 2
-                                                    <i className="right fas fa-angle-left"></i>
-                                                </p>
-                                            </a>
-                                            <ul className="nav nav-treeview">
-                                                <li className="nav-item">
-                                                    <a href="#" className="nav-link">
-                                                        <i className="far fa-dot-circle nav-icon"></i>
-                                                        <p>Level 3</p>
-                                                    </a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="#" className="nav-link">
-                                                        <i className="far fa-dot-circle nav-icon"></i>
-                                                        <p>Level 3</p>
-                                                    </a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="#" className="nav-link">
-                                                        <i className="far fa-dot-circle nav-icon"></i>
-                                                        <p>Level 3</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a href="#" className="nav-link">
-                                                <i className="far fa-circle nav-icon"></i>
-                                                <p>Level 2</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="fas fa-circle nav-icon"></i>
-                                        <p>Level 1</p>
-                                    </a>
-                                </li>
-                                <li className="nav-header">LABELS</li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="nav-icon far fa-circle text-danger"></i>
-                                        <p className="text">Important</p>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="nav-icon far fa-circle text-warning"></i>
-                                        <p>Warning</p>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <i className="nav-icon far fa-circle text-info"></i>
-                                        <p>Informational</p>
-                                    </a>
                                 </li>
                             </ul>
                         </nav>

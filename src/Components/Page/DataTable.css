@@ -1,0 +1,27 @@
+.MuiPaper-root {
+    margin-right: 250px !important;
+}
+
+.tss-qbo1l6-MUIDataTableToolbar-actions {
+    text-align: end !important;
+}
+
+.MuiTableCell-root {
+    text-align: right !important;
+}
+
+.tss-1cdcmys-MUIDataTable-responsiveBase {
+    position: inherit !important;
+}
+
+.MuiTablePagination-selectLabel {
+    margin-bottom: 0 !important;
+}
+
+.MuiTablePagination-displayedRows {
+    margin-bottom: 0 !important;
+}
+
+.MuiInputBase-root {
+    margin-right: 10px !important;
+}
