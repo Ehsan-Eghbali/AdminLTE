@@ -6,7 +6,7 @@ import './DataTable.css'
 
 const DataTable = () => {
     const columns = ["Name", "Company", "City", "State"];
-
+    const rows = 10;
     const data = [
      ["Joe James", "Test Corp", "Yonkers", "NY"],
      ["John Walsh", "Test Corp", "Hartford", "CT"],
@@ -24,6 +24,35 @@ const DataTable = () => {
     
     const options = {
       filterType: 'checkbox',
+      textLabels: {
+        pagination: {
+          next: "Next Page",
+          previous: "Previous Page",
+          rowsPerPage: "تعداد در صفحه:",
+          displayRows: "از",
+        },
+        toolbar: {
+          search: "Search",
+          downloadCsv: "Download CSV",
+          print: "Print",
+          viewColumns: "View Columns",
+          filterTable: "Filter Table",
+        },
+        filter: {
+          all: "All",
+          title: "FILTERS",
+          reset: "RESET",
+        },
+        viewColumns: {
+          title: "Show Columns",
+          titleAria: "Show/Hide Table Columns",
+        },
+        selectedRows: {
+          text: "row(s) selected",
+          delete: "Delete",
+          deleteAria: "Delete Selected Rows",
+        },
+      }
     };
     return(
         <div>
@@ -32,8 +61,10 @@ const DataTable = () => {
             <MUIDataTable
               title={"Employee List"}
               data={data}
+              rows={rows}
               columns={columns}
               options={options}
+              
               className={"table-bordered"}
             />
         </div>
